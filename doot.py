@@ -2,8 +2,11 @@ import asyncio
 import discord
 from discord.ext import commands
 
+from secret import token
+
 AUDIO = "song.mp3"
 CHANNEL = "Doot Land"
+NO_CHANNEL = "There is no **{}** voice channel. Make one and try again."
 
 bot = commands.Bot(
     command_prefix="?",
@@ -19,8 +22,12 @@ class Doot(commands.Cog):
 
     @commands.command()
     async def play(self, ctx):
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name=CHANNEL)
+        if not voiceChannel:
+            await ctx.send(NO_CHANNEL.format(CHANNEL))
+            return
+
         try:
-            voiceChannel = discord.utils.get(ctx.guild.voice_channels, name=CHANNEL)
             self.vc = await voiceChannel.connect()
             self.vc.play(discord.FFmpegPCMAudio(executable="/usr/bin/ffmpeg", source=AUDIO), after=lambda e: self.repeat())
         except:
@@ -38,6 +45,6 @@ class Doot(commands.Cog):
 async def main():
     async with bot:
         await bot.add_cog(Doot(bot))
-        await bot.start("")
+        await bot.start(token)
 
 asyncio.run(main())
