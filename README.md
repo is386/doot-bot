@@ -3,7 +3,7 @@
 This is a Discord bot written in Python that joins a voice channel and loops the doot music forever. That is
 the whole bot. Commands start with `?`.
 
-![](https://github.com/is386/doot-bot/blob/main/doot.png?raw=true)
+![](https://github.com/1nderr/doot-bot/blob/main/doot.png?raw=true)
 
 ## Features
 
