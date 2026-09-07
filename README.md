@@ -1,4 +1,4 @@
-# Doot
+# doot-bot
 
 This is a Discord bot written in Python that joins a voice channel and loops the doot music forever. That is
 the whole bot. Commands start with `?`.
