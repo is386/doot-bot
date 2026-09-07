@@ -3,6 +3,8 @@
 This is a Discord bot written in Python that joins a voice channel and loops the doot music forever. That is
 the whole bot. Commands start with `?`.
 
+![](https://github.com/is386/doot-bot/blob/main/doot.png?raw=true)
+
 ## Features
 
 ### Doot
@@ -10,6 +12,9 @@ the whole bot. Commands start with `?`.
 `?play` joins the voice channel named `Doot Land` and starts playing `song.mp3` through ffmpeg. When the
 song ends it starts it over again, so it never stops on its own. If there is no channel with that name, the
 bot says so and tells you to make one.
+
+The `song.mp3` in this repo is based on
+[this YouTube playlist](https://www.youtube.com/watch?v=WzFXaEYPE10&list=PLelh_z0pMOn-J5ZReYaR_UVOyoDJUT3HR).
 
 ### Leaving
 
